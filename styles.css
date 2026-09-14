@@ -148,7 +148,7 @@ body {
 
 .product-image {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background: linear-gradient(135deg, #1e3a8a, #1e40af);
     display: flex;
     align-items: center;
