@@ -1,4 +1,4 @@
-```javascript
+ ```javascript
 /* =========================================================
    VitaGreen
    Main JavaScript
@@ -1136,3 +1136,4 @@ document.addEventListener(
     }
 );
 ```
+  
