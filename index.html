@@ -1,357 +1,561 @@
+```html
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>VitaGreen - منتجات الماكروجرين الطبيعية</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="styles.css">
-```
+    <meta
+        name="description"
+        content="VitaGreen - منتجات الماكروجرين الطبيعية والعضوية بجودة عالية">
 
+    <meta
+        name="theme-color"
+        content="#1e3a8a">
+
+    <title>VitaGreen | منتجات الماكروجرين الطبيعية</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-```
-<!-- Header -->
-<header class="header">
-    <div class="container header-container">
+    <!-- =========================
+         Header
+    ========================== -->
 
-        <div class="logo">
-            <h1>🌱 VitaGreen</h1>
-            <p>منتجات الماكروجرين الطبيعية</p>
-        </div>
+    <header class="header">
 
-        <nav class="nav">
-            <a href="#products">المنتجات</a>
-            <a href="#benefits">الفوائد</a>
-            <a href="#contact">تواصل معنا</a>
+        <div class="container">
 
-            <button class="cart-btn" onclick="toggleCart()">
-                🛒 السلة
-                (<span id="cart-count">0</span>)
-            </button>
-        </nav>
+            <div class="logo">
 
-    </div>
-</header>
+                <h1>🌱 VitaGreen</h1>
 
+                <p>
+                    منتجات الماكروجرين الطبيعية 100%
+                </p>
 
-<!-- Hero -->
-<section class="hero">
-    <div class="container hero-content">
-
-        <div class="hero-badge">🌿 طازج • طبيعي • صحي</div>
-
-        <h2>صحتك أولويتنا</h2>
-
-        <p>
-            اكتشف مجموعة مختارة من منتجات الماكروجرين الطازجة
-            والمناسبة لنمط حياة صحي.
-        </p>
-
-        <button
-            class="hero-btn"
-            onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-            اكتشف المنتجات 🌱
-        </button>
-
-    </div>
-</section>
-
-
-<!-- Products -->
-<section id="products" class="products">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <span>🌱</span>
-            <h2>منتجاتنا</h2>
-            <p>اختر المنتجات التي تناسبك وأضفها إلى سلة المشتريات</p>
-        </div>
-
-        <div class="products-grid" id="products-grid">
-            <!-- المنتجات يتم تحميلها بواسطة JavaScript -->
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Cart Modal -->
-<div id="cart-modal" class="modal">
-
-    <div class="modal-content cart-modal-content">
-
-        <button class="close" onclick="toggleCart()">&times;</button>
-
-        <h2>🛒 سلة المشتريات</h2>
-
-        <div id="cart-items"></div>
-
-        <div class="cart-summary">
-
-            <div class="total">
-                الإجمالي:
-                <strong>
-                    <span id="total-price">0</span> جنيه
-                </strong>
             </div>
 
+
+            <nav
+                class="nav"
+                aria-label="القائمة الرئيسية">
+
+                <a href="#products">
+                    المنتجات
+                </a>
+
+                <a href="#benefits">
+                    الفوائد
+                </a>
+
+                <a href="#contact">
+                    تواصل معنا
+                </a>
+
+                <button
+                    type="button"
+                    class="cart-btn"
+                    onclick="toggleCart()"
+                    aria-label="فتح سلة المشتريات">
+
+                    🛒 السلة
+                    (<span id="cart-count">0</span>)
+
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         Main
+    ========================== -->
+
+    <main>
+
+        <!-- Hero -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <h2>
+                    صحتك أولويتنا 🌱
+                </h2>
+
+                <p>
+                    منتجات ماكروجرين طبيعية
+                    بجودة عالية تصل إلى باب منزلك
+                </p>
+
+                <button
+                    type="button"
+                    onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+
+                    اكتشف المنتجات
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Products
+        ========================== -->
+
+        <section
+            id="products"
+            class="products">
+
+            <div class="container">
+
+                <h2>
+                    منتجاتنا
+                </h2>
+
+                <div
+                    class="products-grid"
+                    id="products-grid"
+                    aria-live="polite">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Benefits
+        ========================== -->
+
+        <section
+            id="benefits"
+            class="benefits">
+
+            <div class="container">
+
+                <h2>
+                    فوائد الماكروجرين
+                </h2>
+
+                <div class="benefits-grid">
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            💪
+                        </div>
+
+                        <h3>
+                            غني بالعناصر الغذائية
+                        </h3>
+
+                        <p>
+                            الماكروجرين يمكن أن يكون إضافة
+                            مفيدة إلى نظام غذائي متنوع ومتوازن.
+                        </p>
+
+                    </article>
+
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            🧠
+                        </div>
+
+                        <h3>
+                            تنوع غذائي
+                        </h3>
+
+                        <p>
+                            أنواع مختلفة من الماكروجرين توفر
+                            مجموعة متنوعة من الفيتامينات والمعادن.
+                        </p>
+
+                    </article>
+
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            ❤️
+                        </div>
+
+                        <h3>
+                            خيار صحي
+                        </h3>
+
+                        <p>
+                            يمكن دمجه بسهولة مع الوجبات والسلطات
+                            ضمن نظام غذائي متوازن.
+                        </p>
+
+                    </article>
+
+
+                    <article class="benefit-card">
+
+                        <div class="benefit-icon">
+                            🌿
+                        </div>
+
+                        <h3>
+                            طازج وطبيعي
+                        </h3>
+
+                        <p>
+                            نحرص على تقديم منتجات ماكروجرين
+                            طازجة وطبيعية بجودة عالية.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             Contact
+        ========================== -->
+
+        <section
+            id="contact"
+            class="contact">
+
+            <div class="container">
+
+                <h2>
+                    تواصل معنا
+                </h2>
+
+                <div class="contact-info">
+
+                    <div class="contact-item">
+
+                        <span>
+                            📱 الهاتف
+                        </span>
+
+                        <a href="tel:01023666745">
+                            01023666745
+                        </a>
+
+                    </div>
+
+
+                    <div class="contact-item">
+
+                        <span>
+                            💬 WhatsApp
+                        </span>
+
+                        <a
+                            href="https://wa.me/201023666745"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            01023666745
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         Cart Modal
+    ========================== -->
+
+    <div
+        id="cart-modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="cart-title">
+
+        <div class="modal-content">
+
             <button
-                class="checkout-btn"
-                onclick="checkout()">
+                type="button"
+                class="close"
+                onclick="toggleCart()"
+                aria-label="إغلاق السلة">
+
+                &times;
+
+            </button>
+
+            <h2 id="cart-title">
+                🛒 سلة المشتريات
+            </h2>
+
+            <div id="cart-items">
+            </div>
+
+            <div class="cart-summary">
+
+                <div class="total">
+
+                    الإجمالي:
+
+                    <strong id="total-price">
+                        0
+                    </strong>
+
+                    جنيه
+
+                </div>
+
+                <button
+                    type="button"
+                    class="checkout-btn"
+                    onclick="checkout()">
+
+                    إتمام الطلب
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         Checkout Modal
+    ========================== -->
+
+    <div
+        id="checkout-modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="checkout-title">
+
+        <div class="modal-content checkout-form">
+
+            <button
+                type="button"
+                class="close"
+                onclick="closeCheckout()"
+                aria-label="إغلاق نموذج الطلب">
+
+                &times;
+
+            </button>
+
+            <h2 id="checkout-title">
                 إتمام الطلب
-            </button>
+            </h2>
+
+
+            <form onsubmit="submitOrder(event)">
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        الاسم الكامل:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="اكتب اسمك بالكامل"
+                        autocomplete="name"
+                        required>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        رقم الهاتف:
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="01xxxxxxxxx"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        maxlength="11"
+                        required>
+
+                </div>
+
+
+                <!-- Address -->
+
+                <div class="form-group">
+
+                    <label for="address">
+                        العنوان:
+                    </label>
+
+                    <textarea
+                        id="address"
+                        name="address"
+                        placeholder="المحافظة - المنطقة - الشارع - رقم المنزل"
+                        autocomplete="street-address"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- Payment -->
+
+                <div class="form-group">
+
+                    <label for="payment-method">
+                        طريقة الدفع:
+                    </label>
+
+                    <select
+                        id="payment-method"
+                        name="payment-method"
+                        onchange="handlePaymentMethod()"
+                        required>
+
+                        <option value="">
+                            اختر طريقة الدفع
+                        </option>
+
+                        <option value="cash">
+                            💵 كاش عند الاستلام
+                        </option>
+
+                        <option value="instapay">
+                            💳 InstaPay
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- InstaPay -->
+
+                <div
+                    id="instapay-box"
+                    class="instapay-box">
+
+                    <div class="instapay-icon">
+                        💳
+                    </div>
+
+                    <h3>
+                        الدفع عبر InstaPay
+                    </h3>
+
+                    <p>
+                        اضغط على الزر التالي للانتقال
+                        إلى صفحة الدفع الخاصة بنا.
+                    </p>
+
+                    <a
+                        href="https://ipn.eg/S/yassersherif1/instapay/7CCnY2"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="instapay-btn">
+
+                        فتح InstaPay وإتمام الدفع
+
+                    </a>
+
+                    <p class="instapay-note">
+                        بعد إتمام التحويل، ارجع إلى هذه الصفحة
+                        واضغط على "إرسال الطلب".
+                    </p>
+
+                </div>
+
+
+                <!-- Notes -->
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        الملاحظات (اختياري):
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        placeholder="أي ملاحظات خاصة بالطلب؟"></textarea>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    إرسال الطلب عبر WhatsApp
+
+                </button>
+
+            </form>
 
         </div>
 
     </div>
 
-</div>
 
+    <!-- =========================
+         Footer
+    ========================== -->
 
-<!-- Checkout Modal -->
-<div id="checkout-modal" class="modal">
+    <footer class="footer">
 
-    <div class="modal-content checkout-form">
+        <div class="container">
 
-        <button class="close" onclick="closeCheckout()">&times;</button>
-
-        <h2>📦 إتمام الطلب</h2>
-
-        <p class="checkout-subtitle">
-            أدخل بياناتك لإرسال الطلب عبر WhatsApp
-        </p>
-
-        <form onsubmit="submitOrder(event)">
-
-            <div class="form-group">
-                <label for="name">الاسم الكامل *</label>
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="اكتب اسمك بالكامل"
-                    required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">رقم الهاتف *</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="01xxxxxxxxx"
-                    required>
-            </div>
-
-            <div class="form-group">
-                <label for="address">العنوان *</label>
-                <textarea
-                    id="address"
-                    placeholder="المحافظة - المنطقة - الشارع - رقم العقار"
-                    required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="payment-method">طريقة الدفع *</label>
-
-                <select id="payment-method" required>
-
-                    <option value="">
-                        اختر طريقة الدفع
-                    </option>
-
-                    <option value="cash">
-                        💵 كاش عند الاستلام
-                    </option>
-
-                    <option value="instapay">
-                        💳 InstaPay
-                    </option>
-
-                </select>
-            </div>
-
-            <div
-                id="instapay-box"
-                class="instapay-box"
-                style="display:none;">
-
-                <strong>💳 الدفع عبر InstaPay</strong>
-
-                <p>
-                    يمكنك الدفع من خلال رابط InstaPay التالي:
-                </p>
-
-                <a
-                    href="https://ipn.eg/S/yassersherif1/instapay/7CCnY2"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="instapay-link">
-                    فتح رابط InstaPay
-                </a>
-
-                <p class="small-note">
-                    بعد الدفع يمكنك إرسال الطلب، وسيتم التواصل معك لتأكيد العملية.
-                </p>
-
-            </div>
-
-            <div class="form-group">
-                <label for="notes">ملاحظات إضافية</label>
-
-                <textarea
-                    id="notes"
-                    placeholder="أي ملاحظات خاصة بالطلب (اختياري)"></textarea>
-            </div>
-
-            <button
-                type="submit"
-                class="submit-btn">
-                إرسال الطلب عبر WhatsApp 📲
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- Benefits -->
-<section id="benefits" class="benefits">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <span>✨</span>
-            <h2>لماذا الماكروجرين؟</h2>
-            <p>إضافة صغيرة إلى طبقك يمكن أن تجعل وجبتك أكثر تنوعًا</p>
-        </div>
-
-        <div class="benefits-grid">
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🌱</div>
-                <h3>طبيعي وطازج</h3>
-                <p>
-                    منتجات يتم تقديمها بصورة طازجة ومناسبة للإضافة إلى الوجبات اليومية.
-                </p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">💪</div>
-                <h3>غني بالعناصر الغذائية</h3>
-                <p>
-                    الماكروجرين مصدر متنوع للفيتامينات والمعادن والمركبات النباتية.
-                </p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">🥗</div>
-                <h3>سهل الاستخدام</h3>
-                <p>
-                    يمكن إضافته إلى السلطات والسندويتشات والوجبات المختلفة.
-                </p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">❤️</div>
-                <h3>اختيار صحي</h3>
-                <p>
-                    طريقة بسيطة لإضافة المزيد من الخضروات إلى نظامك الغذائي.
-                </p>
-            </div>
+            <p>
+                &copy; 2026 VitaGreen -
+                جميع الحقوق محفوظة
+            </p>
 
         </div>
 
-    </div>
-
-</section>
+    </footer>
 
 
-<!-- Contact -->
-<section id="contact" class="contact">
-
-    <div class="container">
-
-        <div class="section-heading">
-            <span>📞</span>
-            <h2>تواصل معنا</h2>
-            <p>يسعدنا الرد على استفساراتك ومساعدتك في طلبك</p>
-        </div>
-
-        <div class="contact-info">
-
-            <div class="contact-item">
-                <div class="contact-icon">📱</div>
-                <span>الهاتف</span>
-
-                <a href="tel:01023666745">
-                    01023666745
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon">💬</div>
-                <span>WhatsApp</span>
-
-                <a
-                    href="https://wa.me/201023666745"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    01023666745
-                </a>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon">💳</div>
-                <span>InstaPay</span>
-
-                <a
-                    href="https://ipn.eg/S/yassersherif1/instapay/7CCnY2"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    الدفع عبر InstaPay
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Footer -->
-<footer class="footer">
-
-    <div class="container">
-
-        <div class="footer-logo">
-            🌱 VitaGreen
-        </div>
-
-        <p>
-            منتجات الماكروجرين الطبيعية
-        </p>
-
-        <p class="copyright">
-            © 2026 VitaGreen - جميع الحقوق محفوظة
-        </p>
-
-    </div>
-
-</footer>
-
-
-<script src="script.js"></script>
-```
+    <script src="script.js"></script>
 
 </body>
+
 </html>
+```
