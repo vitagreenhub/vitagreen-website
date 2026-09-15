@@ -1,28 +1,43 @@
+بالتأكيد. قمت بتنظيف الكود وتصحيح أخطاء `\:` و`\#` والتعليقات، وحافظت على نفس التصميم والألوان، مع تحسين الاستجابة للموبايل وتنظيم الكود.
+
+```css
+/* =========================
+   Reset & Global Styles
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
+/* =========================
+   Header
+========================= */
+
 .header {
     background: linear-gradient(135deg, #1e3a8a, #1e40af);
     color: white;
     padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -44,6 +59,8 @@ body {
     opacity: 0.9;
 }
 
+/* Navigation */
+
 .nav {
     display: flex;
     gap: 30px;
@@ -54,22 +71,24 @@ body {
     color: white;
     text-decoration: none;
     font-size: 16px;
-    transition: opacity 0.3s;
+    transition: opacity 0.3s ease;
 }
 
 .nav a:hover {
     opacity: 0.8;
 }
 
+/* Cart Button */
+
 .cart-btn {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
     border: 2px solid white;
     padding: 8px 15px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 .cart-btn:hover {
@@ -77,7 +96,10 @@ body {
     color: #1e3a8a;
 }
 
-/* Hero Section */
+/* =========================
+   Hero Section
+========================= */
+
 .hero {
     background: linear-gradient(135deg, #1e3a8a, #1e40af);
     color: white;
@@ -85,8 +107,14 @@ body {
     text-align: center;
 }
 
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .hero-content h2 {
     font-size: 48px;
+    line-height: 1.2;
     margin-bottom: 20px;
 }
 
@@ -105,14 +133,18 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-content button:hover {
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Products Section */
+/* =========================
+   Products Section
+========================= */
+
 .products {
     padding: 80px 20px;
     background-color: white;
@@ -131,13 +163,15 @@ body {
     gap: 30px;
 }
 
+/* Product Card */
+
 .product-card {
-    background: white;
+    background-color: white;
     border: 2px solid #e0e0e0;
     border-radius: 10px;
     overflow: hidden;
-    transition: all 0.3s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
@@ -145,6 +179,8 @@ body {
     box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15);
     border-color: #1e3a8a;
 }
+
+/* Product Image */
 
 .product-image {
     width: 100%;
@@ -158,6 +194,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/* Product Content */
 
 .product-content {
     padding: 20px;
@@ -197,6 +235,8 @@ body {
     color: #1e3a8a;
 }
 
+/* Product Footer */
+
 .product-footer {
     display: flex;
     gap: 10px;
@@ -210,6 +250,12 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
+    font-size: 14px;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: #1e3a8a;
 }
 
 .add-to-cart-btn {
@@ -221,24 +267,27 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .add-to-cart-btn:hover {
     background-color: #1e40af;
 }
 
-/* Modal */
+/* =========================
+   Modal
+========================= */
+
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     overflow-y: auto;
+    padding: 20px;
 }
 
 .modal.active {
@@ -248,13 +297,15 @@ body {
 }
 
 .modal-content {
-    background: white;
+    background-color: white;
     padding: 30px;
     border-radius: 10px;
     width: 90%;
     max-width: 600px;
     position: relative;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close {
@@ -264,13 +315,17 @@ body {
     font-size: 28px;
     cursor: pointer;
     color: #999;
+    transition: color 0.3s ease;
 }
 
 .close:hover {
     color: #333;
 }
 
-/* Cart */
+/* =========================
+   Cart
+========================= */
+
 .cart-summary {
     margin-top: 20px;
     padding-top: 20px;
@@ -292,6 +347,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 15px;
     padding: 10px 0;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -318,15 +374,20 @@ body {
     border-radius: 3px;
     cursor: pointer;
     margin-right: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .remove-btn:hover {
     background-color: #b71c1c;
 }
 
-/* Checkout Form */
+/* =========================
+   Checkout Form
+========================= */
+
 .checkout-form {
     max-width: 500px;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -349,6 +410,15 @@ body {
     border-radius: 5px;
     font-size: 14px;
     font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    box-shadow: 0 0 0 2px rgba(30, 58, 138, 0.1);
 }
 
 .form-group textarea {
@@ -356,23 +426,7 @@ body {
     min-height: 80px;
 }
 
-.submit-btn {
-    width: 100%;
-    background-color: #1e3a8a;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submit-btn:hover {
-    background-color: #1e40af;
-}
-
+.submit-btn,
 .checkout-btn {
     width: 100%;
     background-color: #1e3a8a;
@@ -383,14 +437,18 @@ body {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
+.submit-btn:hover,
 .checkout-btn:hover {
     background-color: #1e40af;
 }
 
-/* Benefits Section */
+/* =========================
+   Benefits Section
+========================= */
+
 .benefits {
     padding: 80px 20px;
     background-color: #f5f5f5;
@@ -410,12 +468,12 @@ body {
 }
 
 .benefit-card {
-    background: white;
+    background-color: white;
     padding: 30px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .benefit-card:hover {
@@ -433,7 +491,10 @@ body {
     line-height: 1.6;
 }
 
-/* Contact Section */
+/* =========================
+   Contact Section
+========================= */
+
 .contact {
     padding: 80px 20px;
     background-color: white;
@@ -476,7 +537,10 @@ body {
     text-decoration: underline;
 }
 
-/* Footer */
+/* =========================
+   Footer
+========================= */
+
 .footer {
     background-color: #1e3a8a;
     color: white;
@@ -485,38 +549,10 @@ body {
     margin-top: 50px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .header .container {
-        flex-direction: column;
-        gap: 20px;
-    }
+/* =========================
+   Messages
+========================= */
 
-    .nav {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-content h2 {
-        font-size: 32px;
-    }
-
-    .hero-content p {
-        font-size: 16px;
-    }
-
-    .contact-info {
-        gap: 30px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Message Styles */
 .success-message {
     background-color: #1e3a8a;
     color: white;
@@ -534,3 +570,129 @@ body {
     margin-bottom: 15px;
     text-align: center;
 }
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 768px) {
+
+    .header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .products,
+    .benefits,
+    .contact {
+        padding: 60px 20px;
+    }
+
+    .products h2,
+    .benefits h2,
+    .contact h2 {
+        font-size: 30px;
+        margin-bottom: 35px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        gap: 30px;
+    }
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 25px 20px;
+    }
+}
+
+/* =========================
+   Small Mobile Screens
+========================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-content button {
+        width: 100%;
+        padding: 13px 20px;
+    }
+
+    .product-content {
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 20px;
+    }
+
+    .product-price {
+        font-size: 21px;
+    }
+
+    .product-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .quantity-input {
+        width: 100%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .remove-btn {
+        margin-right: 0;
+    }
+}
+```
+
+**ملاحظة مهمة:** هذا التعديل يصلح ملف **CSS** فقط. إذا كان هدفك تشغيل المتجر بالكامل، فسنحتاج أيضًا إلى مراجعة ملف **HTML وJavaScript**، خصوصًا وظائف **السلة، الحساب، الحذف، Checkout وإرسال الطلب**.
